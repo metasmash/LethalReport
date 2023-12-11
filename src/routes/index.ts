@@ -4,6 +4,7 @@ import roleMd from 'middleware/roleMiddleware'
 import authenticationRoutes from 'routes/authenticationRoutes'
 import adminRoutes from './adminRoutes'
 import { UserRole } from '../mongo/schema/users'
+import lethalApiRoutes from './lethalApiRoutes'
 
 const router = express.Router()
 
@@ -17,5 +18,7 @@ router.use(
 )
 
 router.get('/healthCheck', async (req, res) => res.json({ status: 'ok' }))
+
+router.use('/lethalreportapi', lethalApiRoutes)
 
 export default router

@@ -37,6 +37,8 @@ services:
 
 #  api-rest:
 #    container_name: api-rest
+#    env_file:
+#      - .env.example
 #    image: example-api
 #    depends_on:
 #      - mongodb

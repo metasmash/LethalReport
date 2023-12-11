@@ -1,3 +1,4 @@
 import Users from './users'
+import LethalReport from './lethalReport'
 
-export default { Users }
+export default { Users, LethalReport }
