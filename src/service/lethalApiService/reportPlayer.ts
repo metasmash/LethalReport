@@ -19,6 +19,10 @@ const reportPlayer: RequestHandler = async (req, res) => {
             reportReason
         )
 
+        console.log(
+            `Player ${reportedSteamId} has been reported by ${reporterSteamId}`
+        )
+
         // Send a success response
         res.status(200).json({ message: 'Report successfully added' })
     } catch (error) {

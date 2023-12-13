@@ -15,6 +15,10 @@ const getNumberOfReport: RequestHandler = async (req, res) => {
             reportedSteamId
         )
 
+        console.log(
+            `Player report information fetched for user ${reportedSteamId}`
+        )
+
         res.status(200).json({
             reportedSteamId,
             totalReports: reportCounts.total,

@@ -19,7 +19,7 @@ mongoose
     .connect(
         `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${MONGO_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`,
         {
-            serverSelectionTimeoutMS: 10000,
+            serverSelectionTimeoutMS: 1000,
         }
     )
     .then((r) => {

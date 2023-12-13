@@ -35,21 +35,19 @@ services:
 # Uncomment the section below and change example-api by your docker image tag
 # You need to build your docker image first to make it working and test if everything work for deployment
 
-#  api-rest:
-#    container_name: api-rest
-#    env_file:
-#      - .env.example
-#    image: example-api
-#    depends_on:
-#      - mongodb
-#    environment:
-#      - DB_NAME=$DB_NAME
-#      - DB_USERNAME=$DB_USERNAME
-#      - DB_PASSWORD=$DB_PASSWORD
-#      - API_PORT=8080
-#      - DB_PORT=27017
-#      - ENVIRONMENT=$ENVIRONMENT
-#      - MONGO_HOST=mongodb
-#    ports:
-#      - '8080:8080'
-#    restart: "on-failure"
+  api-rest:
+    container_name: lethalapi
+    image: siniiful/lethalapi:latest
+    depends_on:
+      - mongodb
+    environment:
+      - DB_NAME=db-example
+      - DB_USERNAME=admin-example
+      - DB_PASSWORD=password-example
+      - API_PORT=8092
+      - DB_PORT=27017
+      - ENVIRONMENT=PRODUCTION
+      - MONGO_HOST=mongodb
+    ports:
+      - '8092:8092'
+    restart: "on-failure"
